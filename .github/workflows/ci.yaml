@@ -21,7 +21,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t adidevops/devops-project:${{ env.SHORT_SHA }} .
+          docker build -t aditya099raj/devops-project:${{ env.SHORT_SHA }} .
 
       - name: Log in to Docker Hub
         run: |
