@@ -1,7 +1,7 @@
 image:
   repository: aditya099raj/devops-project
   pullPolicy: IfNotPresent
-  tag: "4edf220"
+  tag: "e81ff0d"
 service:
   type: ClusterIP
   port: 8080
