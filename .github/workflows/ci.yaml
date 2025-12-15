@@ -30,3 +30,16 @@ jobs:
       - name: Push Docker image to Docker Hub
         run: |
           docker push aditya099raj/devops-project:${{ env.SHORT_SHA }}
+
+      - name: Configure Git Author
+        run: |
+          git config --global user.name "adidevops"
+          git config --global user.email "hello@adidevops.com"
+      
+      - name: Update Helm chart image tag
+        run: |
+          sed -i "s/tag: .*/tag: \"${{ env.SHORT_SHA }}\"/" ./devops-project-timer-python-app/values.yaml
+          git add ./devops-project-timer-python-app/values.yaml
+          git commit -m "Update image tag to ${{ env.SHORT_SHA }}"
+          git push
+        

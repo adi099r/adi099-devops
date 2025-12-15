@@ -1,0 +1,13 @@
+image:
+  repository: aditya099raj/devops-project
+  pullPolicy: IfNotPresent
+  tag: latest
+service:
+  type: ClusterIP
+  port: 8080
+ingress:
+  enabled: false
+serviceAccount:
+  enabled: false
+autoscaling:
+  enabled:: false
